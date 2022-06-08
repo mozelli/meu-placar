@@ -1,0 +1,52 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  padding: 2.4rem 1.6rem;
+  // background-image: linear-gradient(var(--primary-light), var(--light));
+  background-image: linear-gradient(rgba(191, 219, 247, 0.5), var(--light));
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2.5rem;
+
+    h1 {
+      font-weight: 500;
+      font-size: 4rem;
+      color: var(--primary);
+    }
+    p {
+      font-size: 2.4rem;
+      color: var(--primary);
+    }
+  }
+
+  .form {
+    padding-top: 5rem;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .links {
+    margin-top: 1.6rem;
+  }
+
+  .socialMediaButtons {
+    margin-top: 2.4rem;
+    button {
+      margin: 0.8rem 0;
+    }
+  }
+
+  .link {
+    margin: 0.8rem 0;
+    a {
+      color: var(--warning);
+      width: 100%;
+    }
+  }
+}
