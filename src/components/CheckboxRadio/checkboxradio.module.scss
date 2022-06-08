@@ -1,0 +1,13 @@
+.checkboxRadio {
+  display: flex;
+  justify-content: space-between;
+
+  input[type="checkbox"] {
+    min-width: 2rem;
+    height: 2rem;
+  }
+
+  label {
+    margin: 0 0.8rem;
+  }
+}

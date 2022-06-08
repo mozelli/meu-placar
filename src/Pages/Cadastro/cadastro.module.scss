@@ -1,11 +1,10 @@
-.login {
+.cadastro {
   width: 100%;
   height: 100vh;
   padding: 2.4rem 1.6rem;
-  // background-image: linear-gradient(var(--primary-light), var(--light));
   background-image: linear-gradient(rgba(191, 219, 247, 0.5), var(--light));
 
-  .brand {
+  .title {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,30 +22,32 @@
     }
   }
 
-  .form {
+  form {
     padding-top: 5rem;
 
     button {
       width: 100%;
     }
-  }
 
-  .links {
-    margin-top: 1.6rem;
-  }
+    .datanasc {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
 
-  .socialMediaButtons {
-    margin-top: 2.4rem;
-    button {
-      margin: 0.8rem 0;
+      .day {
+      }
+
+      .month {
+      }
+
+      .year {
+      }
     }
-  }
 
-  .link {
-    margin: 0.8rem 0;
     a {
-      color: var(--warning);
       width: 100%;
+      margin-top: 2.4rem;
     }
   }
 }

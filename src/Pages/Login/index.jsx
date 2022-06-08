@@ -27,7 +27,7 @@ const Login = () => {
             </Link>
           </p>
           <p>
-            <Link to="/" className='button'>
+            <Link to="/cadastro" className='button'>
               Ainda não tenho cadastro
             </Link>
           </p>
