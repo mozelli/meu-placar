@@ -5,43 +5,40 @@ import Input from '../../components/Input';
 import styles from './login.module.scss';
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState(''); 
 
   return (
     <div className={ styles.login }>
-      <div className={ styles.brand }>
-        <h1>Meu Placar</h1>
-        <p>Bolão online</p>
-      </div>
-      <div className={ styles.form }>
-        <form>
-          <Input value={ email } type="email" onChange={setEmail} label="E-mail" id="email" />
-          <Input value={ password } type="password" onChange={setPassword} label="Senha" id="senha" />
-          <button className='contained'>Entrar!</button>
-        </form>
-        <div className={ styles.links }>
-          <p>
-            <Link to="/" className='button'>
-              Esqueci minha senha
-            </Link>
-          </p>
-          <p>
-            <Link to="/cadastro" className='button'>
-              Ainda não tenho cadastro
-            </Link>
-          </p>
+      <header className={ styles.title }>
+        <h2 className='mt-4'>Meu Placar</h2>
+      </header>
+      <section className={ styles.form }>
+        <fieldset className='p-1'>
+          <Input label="Email" type="email" value={ emailValue } action={ setEmailValue }  />
+        </fieldset>
+        <fieldset className='p-1'>
+          <Input label="Senha" type="password" value={ passwordValue } action={ setPasswordValue } />
+        </fieldset>
+        <div className={ styles.linkRescuePassword }>
+          <Link to="/" className='px-1'>
+            esqueci minha senha
+          </Link>
         </div>
-        <div className={ styles.socialMediaButtons }>
-          <button className="contained">Entrar com Facebook</button>
-          <button className="contained">Entrar com Google</button>
+        <div className={ styles.buttons }>
+          <button className='btn'>Entrar</button>
+          <Link to="/">
+            <button className="btn outlined">Cadastrar</button>
+          </Link>
         </div>
-      </div>
-      <p className={ styles.link }>
-        <Link to="/" className='button'>
-          Como funciona?
+      </section>
+      <footer className={ styles.termLink }>
+        <Link to="/">
+          Termos de uso da plataforma
         </Link>
-      </p>
+      </footer>
+      
     </div>
   );
 }

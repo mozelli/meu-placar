@@ -1,2 +1,47 @@
 .input {
+  .formControl {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: var(--mzl-body-line-height);
+    color: var(--mzl-body-color);
+    background-color: var(--mzl-body-bg-color);
+    border-radius: 0.6rem;
+    border: 1px solid var(--mzl-gray-400);
+    outline: none;
+    transition: all 150ms ease-in-out;
+  }
+
+  .sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 1.4rem;
+    border-radius: 0.4rem;
+  }
+
+  .lg {
+    padding: 0.8rem 1.6rem;
+    font-size: 2rem;
+    border-radius: 0.8rem;
+  }
+
+  .formControl:focus {
+    border-color: var(--mzl-green-700);
+    box-shadow: 0 0 0 0.4rem var(--mzl-green-700-shadow);
+  }
+
+  .formControl.warning:focus {
+    border-color: var(--warning);
+    box-shadow: 0 0 0 0.4rem var(--mzl-yellow-900-shadow);
+  }
+
+  .formControl.danger:focus {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 0.4rem var(--mzl-red-900-shadow);
+  }
+
+  .formLabel {
+    margin-bottom: 0.8rem;
+  }
 }

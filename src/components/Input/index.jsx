@@ -1,15 +1,27 @@
+import { useState } from 'react';
+
 import styles from './input.module.scss';
 
 const Input = (props) => {
+  
+  const [inputSize, setInputSize] = useState(styles[props.size]);
+  const [inputAlert, setInputAlert] = useState(styles[props.alert]);
+  const [inputStyle, setInputStyle] = useState(`${styles.formControl} ${inputSize} ${inputAlert}`);
+
   return (
-    <div className="form-control">
-      {props.label ? (<label htmlFor={props.id}>{props.label}</label>) : ""}
+    <div className={ styles.input }>
+      <label 
+        htmlFor={ props.id } 
+        className={ styles.formLabel }
+      >
+        { props.label }
+      </label>
       <input 
         type={ props.type } 
-        value={props.value} 
-        onChange={(event) => props.onChange(event.target.value)} 
-        placeholder={props.placeholder}
-        id={ props.id }
+        id={ props.id } 
+        className={inputStyle}
+        value={ props.value }
+        onChange={ (event) => props.action(event.target.value) }
       />
     </div>
   );

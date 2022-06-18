@@ -1,52 +1,55 @@
 .login {
-  width: 100%;
-  height: 100vh;
-  padding: 2.4rem 1.6rem;
-  // background-image: linear-gradient(var(--primary-light), var(--light));
-  background-image: linear-gradient(rgba(191, 219, 247, 0.5), var(--light));
+  margin: 0.8rem;
 
-  .brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 1rem;
-
-    h1 {
+  .title {
+    text-align: center;
+    h2 {
+      color: var(--mzl-green-800);
       font-weight: 500;
-      font-size: 4rem;
-      color: var(--primary);
-    }
-    p {
-      font-size: 2.4rem;
-      color: var(--primary);
     }
   }
 
   .form {
-    padding-top: 5rem;
+    .linkRescuePassword {
+      text-align: right;
 
-    button {
+      a {
+        color: var(--danger);
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 1.4rem;
+      }
+    }
+
+    .buttons {
       width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 2rem 0.8rem 0 0.8rem;
+
+      button {
+        width: 100%;
+      }
+
+      a {
+        width: 100%;
+
+        button {
+          width: 100%;
+        }
+      }
     }
   }
 
-  .links {
-    margin-top: 1.6rem;
-  }
+  footer.termLink {
+    text-align: center;
+    padding-top: 10rem;
 
-  .socialMediaButtons {
-    margin-top: 2.4rem;
-    button {
-      margin: 0.8rem 0;
-    }
-  }
-
-  .link {
-    margin: 0.8rem 0;
     a {
+      text-decoration: none;
       color: var(--warning);
-      width: 100%;
+      font-weight: 500;
     }
   }
 }
