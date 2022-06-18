@@ -1,30 +1,21 @@
 .cadastro {
-  width: 100%;
-  height: 100vh;
-  padding: 2.4rem 1.6rem;
-  background-image: linear-gradient(rgba(191, 219, 247, 0.5), var(--light));
+  margin: 0.8rem;
+
+  .buttonBack {
+    width: 2.4rem;
+    margin-top: 2rem;
+  }
 
   .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 1rem;
+    text-align: center;
 
-    h1 {
+    h2 {
+      color: var(--primary);
       font-weight: 500;
-      font-size: 4rem;
-      color: var(--primary);
-    }
-    p {
-      font-size: 2.4rem;
-      color: var(--primary);
     }
   }
 
-  form {
-    padding-top: 5rem;
-
+  .form {
     button {
       width: 100%;
     }
@@ -33,15 +24,25 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0.8rem;
       gap: 2rem;
 
       .day {
+        input {
+          text-align: center;
+        }
       }
 
       .month {
+        input {
+          text-align: center;
+        }
       }
 
       .year {
+        input {
+          text-align: center;
+        }
       }
     }
 

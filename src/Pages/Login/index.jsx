@@ -16,10 +16,10 @@ const Login = () => {
       </header>
       <section className={ styles.form }>
         <fieldset className='p-1'>
-          <Input label="Email" type="email" value={ emailValue } action={ setEmailValue }  />
+          <Input label="Email" type="email" value={ emailValue } action={ setEmailValue } id="email"  />
         </fieldset>
         <fieldset className='p-1'>
-          <Input label="Senha" type="password" value={ passwordValue } action={ setPasswordValue } />
+          <Input label="Senha" type="password" value={ passwordValue } action={ setPasswordValue } id="password" />
         </fieldset>
         <div className={ styles.linkRescuePassword }>
           <Link to="/" className='px-1'>
@@ -28,7 +28,7 @@ const Login = () => {
         </div>
         <div className={ styles.buttons }>
           <button className='btn'>Entrar</button>
-          <Link to="/">
+          <Link to="/cadastro">
             <button className="btn outlined">Cadastrar</button>
           </Link>
         </div>
