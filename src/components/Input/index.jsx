@@ -17,11 +17,12 @@ const Input = (props) => {
         { props.label }
       </label>
       <input 
+        {...props.value}
         type={ props.type } 
         id={ props.id } 
         className={inputStyle}
-        value={ props.value }
-        onChange={ (event) => props.action(event.target.value) }
+        placeholder={props.placeholder}
+        defaultValue={props.default}
       />
     </div>
   );
