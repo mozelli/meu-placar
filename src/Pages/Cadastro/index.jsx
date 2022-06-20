@@ -46,7 +46,7 @@ const schema = yup.object({
     .matches(/^[A-Za-z0-9]*\d+[A-Za-z0-9]*$/,{message: "Mínimo 6 caracteres com letras e números."}),
   retypePassword: yup
     .string()
-    .min(6,"Mínimo 6 caracteres com letras e números.")
+    .oneOf([yup.ref('password'), null],'As senhas devem ser iguais.')
     .required("Senha obrigatório.")
     .matches(/^[A-Za-z0-9]*\d+[A-Za-z0-9]*$/,{message: "Mínimo 6 caracteres com letras e números."}),
   acceptTerms: yup
