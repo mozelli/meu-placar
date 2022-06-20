@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import axios from 'axios';
 
 import Input from '../../components/Input';
 import CheckboxRadio from '../../components/CheckboxRadio';
@@ -13,7 +14,7 @@ const schema = yup.object({
     .string()
     .required("Nome obrigatório.")
     .matches(/[a-zA-Z]+/,{message: "Apenas letas."}),
-  lastName: yup
+  lastname: yup
     .string("Somente letras")
     .required("Sobrenome obrigatório.")
     .matches(/[a-zA-Z]+/,{message: "Apenas letas."}),
@@ -59,7 +60,6 @@ const Cadastro = () => {
   const {register, handleSubmit, formState: {errors}} = useForm({
     resolver: yupResolver(schema)
   });
-  console.log(errors);
 
   return (
     <div className={ styles.cadastro }>
@@ -73,7 +73,15 @@ const Cadastro = () => {
       </div>
       <section className={ styles.form }>
         <form onSubmit={handleSubmit((data) => {
-          console.log(data)
+          axios({
+            method: "post",
+            url: "http://localhost:4444/users",
+            data
+          }).then((response) => {
+            console.log(response.data)
+          }).catch((error) => {
+            console.log(error)
+          })
         })}>
           <fieldset className='p-1'>
             <Input 
@@ -91,14 +99,14 @@ const Cadastro = () => {
           </fieldset>
           <fieldset className='p-1'>
             <Input 
-              value={register("lastName")} 
+              value={register("lastname")} 
               type="text"  
               label="Sobrenome:" 
-              id="lastName"
+              id="lastname"
             />
             {
-              (errors.lastName?.message ? 
-              (<p className={styles.textAlert}>{errors.lastName?.message}</p>) : 
+              (errors.lastname?.message ? 
+              (<p className={styles.textAlert}>{errors.lastname?.message}</p>) : 
               "")
             }
           </fieldset>
