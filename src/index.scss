@@ -19,30 +19,43 @@
 
   /* COLORS */
   --mzl-white: rgb(255, 255, 255);
-  --mzl-gray: rgb(108, 117, 125);
-  --mzl-gray-dark: rgb(52, 58, 64);
-  --mzl-gray-100: rgb(248, 249, 250);
-  --mzl-gray-200: rgb(233, 236, 239);
-  --mzl-gray-300: rgb(222, 226, 230);
-  --mzl-gray-400: rgb(206, 212, 218);
-  --mzl-gray-500: rgb(173, 181, 189);
-  --mzl-gray-600: rgb(108, 117, 125);
-  --mzl-gray-700: rgb(73, 80, 87);
-  --mzl-gray-800: rgb(52, 58, 64);
-  --mzl-gray-900: rgb(33, 37, 41);
+  --mzl-gray-100: rgb(230, 230, 230);
+  --mzl-gray-200: rgb(208, 209, 209);
+  --mzl-gray-300: rgb(186, 187, 188);
+  --mzl-gray-400: rgb(164, 166, 167);
+  --mzl-gray-500: rgb(142, 144, 146);
+  --mzl-gray-600: rgb(121, 123, 125);
+  --mzl-gray-700: rgb(99, 101, 104);
+  --mzl-gray-800: rgb(77, 80, 83);
+  --mzl-gray-900: rgb(55, 58, 62);
+  --mzl-gray-dark: rgb(33, 37, 41);
+  --mzl-black: rgb(0, 0, 0);
 
-  --mzl-green-900: rgb(32, 79, 38);
-  --mzl-green-800: rgb(45, 105, 50);
-  --mzl-green-700: rgb(47, 117, 56);
-  --mzl-green-700-shadow: rgba(47, 117, 56, 0.25);
-  --mzl-green-600: rgb(72, 181, 87);
-  --mzl-green-500: rgb(98, 245, 118);
+  --mzl-red-100: rgb(255, 174, 174);
+  --mzl-red-200: rgb(238, 155, 155);
+  --mzl-red-300: rgb(222, 135, 135);
+  --mzl-red-400: rgb(205, 116, 116);
+  --mzl-red-500: rgb(188, 97, 97);
+  --mzl-red-600: rgb(172, 77, 77);
+  --mzl-red-700: rgb(155, 58, 58);
+  --mzl-red-800: rgb(138, 39, 39);
+  --mzl-red-900: rgb(122, 19, 19);
+  --mzl-red-dark: rgb(105, 0, 0);
+
+  --mzl-green-100: rgb(173, 255, 180);
+  --mzl-green-200: rgb(154, 233, 161);
+  --mzl-green-300: hsl(125, 46%, 68%);
+  --mzl-green-400: rgb(115, 189, 122);
+  --mzl-green-500: rgb(96, 167, 102);
+  --mzl-green-600: rgb(77, 144, 83);
+  --mzl-green-700: rgb(58, 122, 63);
+  --mzl-green-800: rgb(38, 100, 44);
+  --mzl-green-900: rgb(19, 78, 24);
+  --mzl-green-dark: rgb(0, 56, 5);
+  --mzl-green-700-shadow: rgba(58, 122, 63, 0.25);
 
   --mzl-yellow-900: rgb(249, 166, 32);
   --mzl-yellow-900-shadow: rgba(249, 166, 32, 0.25);
-
-  --mzl-red-900: rgb(188, 65, 43);
-  --mzl-red-900-shadow: rgb(188, 65, 43, 0.25);
 
   --mzl-body-color: var(var(--mzl-gray-900));
   --primary: var(--mzl-green-900);
