@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import axios from "axios";
 
 import Input from '../../components/Input';
 import styles from './login.module.scss';
@@ -30,7 +31,15 @@ const Login = () => {
       </header>
       <section className={ styles.form }>
         <form onSubmit={handleSubmit((data) => {
-          console.log(data);
+          axios({
+            method: "post",
+            url: "http://localhost:4444/users/authenticate",
+            data
+          }).then((response) => {
+            console.log(response.data)
+          }).catch((error) => {
+            console.log(error)
+          })
         })}>
           <fieldset className='p-1'>
             <Input 
