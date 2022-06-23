@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -23,6 +24,7 @@ const Login = () => {
   const {register, handleSubmit, formState: {errors}} = useForm({
     resolver: yupResolver(schema)
   });
+  const [logged, setLogged] = useState(false);
 
   return (
     <div className={ styles.login }>
@@ -36,11 +38,20 @@ const Login = () => {
             url: "http://localhost:4444/users/authenticate",
             data
           }).then((response) => {
-            console.log(response.data)
+            // console.log(response.data)
+            if(response.data) {
+              const {id, name, email, token} = response.data.user;
+              localStorage.id = id;
+              localStorage.name = name;
+              localStorage.email = email;
+              localStorage.token = token;
+              setLogged(true);
+            }
           }).catch((error) => {
             console.log(error)
           })
         })}>
+          {logged && (<Navigate to="/home" />)}
           <fieldset className='p-1'>
             <Input 
               label="Email" 
