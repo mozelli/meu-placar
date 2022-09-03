@@ -40,11 +40,11 @@ const Login = () => {
           }).then((response) => {
             // console.log(response.data)
             if(response.data) {
-              const {id, name, email, token} = response.data.user;
+              const {id, name, email} = response.data.user;
               localStorage.id = id;
               localStorage.name = name;
               localStorage.email = email;
-              localStorage.token = token;
+              localStorage.token = response.data.token;
               setLogged(true);
             }
           }).catch((error) => {

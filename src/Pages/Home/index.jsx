@@ -1,13 +1,53 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import Header from '../../components/Header';
+import Select from '../../components/Select';
 import styles from './home.module.scss';
 
 const Home = () => {
+  const [championshipSelected, setChampionshipSelected] = useState("");
+  const [championships, setChampionships] = useState([
+    {id: 1, name: "Campeonato Brasileiro Série A"},
+    {id: 2, name: "Campeonato Brasileiro Série B"},
+    {id: 3, name: "Copa do Brasil"}
+  ]);
+
+  // useEffect(() => {
+  //   axios({
+  //     method: "post",
+  //     url: "http://localhost:4444/users/authenticate",
+  //     data
+  //   }).then((response) => {
+  //     // console.log(response.data)
+  //     if(response.data) {
+  //       const {id, name, email} = response.data.user;
+  //       localStorage.id = id;
+  //       localStorage.name = name;
+  //       localStorage.email = email;
+  //       localStorage.token = response.data.token;
+  //       setLogged(true);
+  //     }
+  //   }).catch((error) => {
+  //     console.log(error)
+  //   })
+  // },[])
+
+  useEffect(() => {
+    console.log(championshipSelected);
+  }, [championshipSelected]);
 
   return (
     <div className={ styles.home }>
       <Header />
       <div className={ styles.main }>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere inventore labore neque? Cumque sunt soluta in, consequuntur nam dolores aperiam fugiat quod accusantium autem dolorum harum cum incidunt a obcaecati reprehenderit doloribus temporibus veniam? Illum veniam, qui temporibus magnam ullam officiis debitis. Neque corporis sunt consectetur sint saepe nam natus officia quo, accusantium aliquam odio nemo optio cum pariatur ut iusto maiores suscipit. Molestiae, iure dolore sequi saepe explicabo amet? Sed architecto error eveniet fugiat facilis dolorem eius cum possimus praesentium quisquam porro omnis expedita similique, sequi aut tempora aperiam neque cupiditate ratione modi doloribus, quia blanditiis? Doloremque hic minus veritatis repellendus accusamus magni quaerat vel! Minus officia beatae repudiandae ipsam in provident distinctio nesciunt corporis similique dicta magnam reprehenderit laborum cumque, impedit odit possimus numquam architecto? Tenetur expedita illo porro repudiandae iste! Fugit, omnis veniam sed illo necessitatibus impedit deleniti dolores nam pariatur sint ratione, vero tempore numquam? Blanditiis, molestias magnam et, minus unde numquam pariatur, deleniti deserunt suscipit commodi quaerat accusantium tempora facere ex ea harum nobis natus. Temporibus voluptatem totam, voluptate facere expedita placeat repellat enim dolores minima, iure, quidem ab. Porro aperiam quos quisquam neque, necessitatibus deserunt dolorum obcaecati rem esse voluptate pariatur! Deserunt autem dignissimos sapiente, aliquam ullam voluptatibus minus, quas rerum, odio hic blanditiis? Ratione eos aut voluptatem, magni quisquam eaque quis repellendus unde atque distinctio earum adipisci vitae, sint, culpa temporibus alias sit quos ipsa ducimus quod! Ad debitis maiores dolores doloremque optio quos reprehenderit illo quam, nam molestias unde iste odio fugit sapiente beatae numquam ut? Dolores hic harum soluta facilis inventore itaque a nam nesciunt explicabo, doloremque dicta vero impedit expedita fugiat architecto illo aliquam reprehenderit. Provident, culpa vitae quam, totam aliquid ipsa cum inventore saepe exercitationem quisquam sequi dignissimos magnam nisi aspernatur tempora deserunt ducimus error eum dolorem amet voluptates nam quidem? Quo, et deleniti. Nihil illum quod corporis tempore sed? Quos aperiam totam facilis excepturi consequuntur, qui eveniet obcaecati officia a temporibus nam, praesentium optio similique fugiat dolorem numquam? Repudiandae aliquam dicta laudantium autem pariatur in neque voluptates eius recusandae nisi tempore nam ipsa voluptate consequatur, aperiam totam blanditiis animi ipsum perferendis. Accusantium consectetur quos dignissimos esse atque enim voluptatem quisquam, voluptates vitae. Corrupti veritatis alias repudiandae nihil, expedita rem, unde iusto exercitationem nemo quae officia ex fugiat. Cum soluta ipsam fugit error corporis quaerat consequuntur, at eligendi voluptates ab labore impedit iusto vitae, reiciendis earum. Molestias commodi suscipit est exercitationem voluptatum aspernatur quas aperiam odio nesciunt, fugit esse repellat perferendis nihil consequatur quos quis ad excepturi ipsam, quam numquam blanditiis vero. Quae ex voluptatem molestiae modi fugiat architecto aliquid ipsam eveniet saepe? Quia ex aspernatur rem officiis nisi. Illum, perspiciatis, ducimus odio illo deserunt quae nihil qui dolorum neque fuga rerum nulla non amet enim, quibusdam necessitatibus debitis quod maxime cum saepe corporis explicabo facilis! Eveniet, deserunt! Necessitatibus quia, adipisci fuga sed harum, facilis ipsam distinctio provident asperiores repellendus in quaerat esse velit officia voluptatibus fugiat dignissimos. Cumque eligendi ut pariatur unde. Eum quibusdam suscipit doloribus debitis praesentium.
+        <div className={ `${styles.selectChampionship} pt-2` }>
+          <Select 
+            label="Escolha o campeonato" 
+            options={championships} 
+            action={setChampionshipSelected }
+          />
+        </div>
       </div>
     </div>
   );
